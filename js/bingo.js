@@ -14,7 +14,8 @@ function thing() {
             stuff.innerHTML =`<p>Freeee!!!</p>`; 
 
         } else {
-            stuff.innerHTML =`<p>box${i}</p>`;
+            // stuff.innerHTML =`<p>box${i}</p>`;
+            stuff.innerHTML = bingoValues;
         }
 
         stuff.setAttribute('onclick', `selectedBox(\`box${i}\`)`);
@@ -22,6 +23,33 @@ function thing() {
         bingoBoard.appendChild(stuff);
     }
 }
+
+const bingoValues = [
+    'Diversity',
+    'Intersection of business, design and code',
+    'Reference to a "hot, new" prototyping tool',
+    'Mobile first',
+    'Accessibility',
+    'Wireframes',
+    'High-fidelity',
+    'Cross-functional',
+    'Putting the customer at the heart of everything we do',
+    'Brand values',
+    'Analytics or measuring success',
+    'Card-sorting',
+    'Empathy',
+    'On-boarding',
+    'Bottom-line impact',
+    'Agile, fragile, agile-ish',
+    'Meeting stakeholder needs',
+    'Journey map',
+    'User needs',
+    'User-driven results',
+    'Make it real',
+    'Disruptive',
+    'Synergy',
+    'Leading change together'
+];
 
 // TODO: display message upon achieving BINGO
 // calcuateWin = () => {

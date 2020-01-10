@@ -1,11 +1,14 @@
 .bingo-board {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 0;
+  padding: 0;
 }
 .bingo-board li {
   list-style-type: none;
   text-align: center;
   height: 8rem;
+  border: 1px solid #000;
 }
 .bingo-board li:hover {
   cursor: pointer;
@@ -13,6 +16,7 @@
 }
 .bingo-board li.selected {
   background-color: blue;
+  color: #fff;
 }
 
 /*# sourceMappingURL=styles.css.map */
