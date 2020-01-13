@@ -1,5 +1,8 @@
 body {
-  font-family: "Exo", sans-serif;
+  font-family: "Public Sans", sans-serif;
+}
+body h1 {
+  font-weight: 100;
 }
 
 .bingo-board {
@@ -7,6 +10,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   margin: 0;
   padding: 0;
+  gap: 0.4rem;
 }
 .bingo-board li {
   list-style-type: none;
@@ -15,15 +19,32 @@ body {
   border: 1px solid #000;
   display: grid;
   align-items: center;
-  font-weight: 600;
+  font-weight: 700;
 }
 .bingo-board li:hover {
   cursor: pointer;
   background-color: rgba(255, 192, 203, 0.192);
 }
 .bingo-board li.selected {
-  background-color: blue;
-  color: #fff;
+  animation: selectedBox 3s infinite;
+  color: red;
+}
+@keyframes selectedBox {
+  0% {
+    border: 4px solid red;
+  }
+  25% {
+    border: 4px solid blue;
+  }
+  50% {
+    border: 4px solid yellow;
+  }
+  75% {
+    border: 4px solid pink;
+  }
+  100% {
+    border: 4px solid green;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -15,7 +15,8 @@ makeBingoBoard = () => {
 
         // Middle square is always free
         if (i === 12) {
-            listItem.innerHTML =`<p>Freeee!!!</p>`; 
+            listItem.innerHTML =`<p>Freeee!!!</p>`;
+            listItem.classList.add("selected");
 
         } else {
             listItem.innerHTML = bingoValue();
@@ -52,6 +53,7 @@ const bingoValues = [
     'On-boarding',
     'Bottom-line impact',
     'Agile, fragile, agile-ish',
+    'Digital transformation promises to unlock business potential across the entire value chain, including the partner ecosystem. It can be a force multiplier when coupled with a company’s ambition and vision.',
     'Meeting stakeholder needs',
     'Journey map',
     'User needs',
