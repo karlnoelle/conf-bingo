@@ -53,7 +53,7 @@ const bingoValues = [
     'On-boarding',
     'Bottom-line impact',
     'Agile, fragile, agile-ish',
-    'Digital transformation promises to unlock business potential across the entire value chain, including the partner ecosystem. It can be a force multiplier when coupled with a company’s ambition and vision.',
+    'Value chain multiplier',
     'Meeting stakeholder needs',
     'Journey map',
     'User needs',
