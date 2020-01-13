@@ -15,7 +15,7 @@ function thing() {
 
         } else {
             // stuff.innerHTML =`<p>box${i}</p>`;
-            stuff.innerHTML = bingoValues;
+            stuff.innerHTML = [bingoValue];
         }
 
         stuff.setAttribute('onclick', `selectedBox(\`box${i}\`)`);
@@ -50,6 +50,12 @@ const bingoValues = [
     'Synergy',
     'Leading change together'
 ];
+
+const bingoValue = bingoValues[Math.floor(Math.random()*bingoValues.length)];
+
+bingoValues.foreach (var i = bingoValues.length-1; i <= 24; i--) {
+    bingoValues.slice(bingoValues[Math.floor(Math.random() * bingoValues.length - 1)]);
+};
 
 // TODO: display message upon achieving BINGO
 // calcuateWin = () => {
