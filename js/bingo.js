@@ -1,29 +1,40 @@
+// enable selection toggling of boxes
 selectedBox = (id) => {
     const element = document.getElementById(id);
     element.classList.toggle("selected");
 }
 
-function thing() {
+// Generate the bingo board HTML
+makeBingoBoard = () => {
     const bingoBoard = document.getElementById('bingo-board');
 
+    // Make 25 <li> elements inside #bingo-board
     for (let i = 0; i < 25; i++) {
-        const stuff = document.createElement('li');
-        stuff.setAttribute('id', `box${i}`);
+        const listItem = document.createElement('li');
+        listItem.setAttribute('id', `box${i}`);
 
+        // Middle square is always free
         if (i === 12) {
-            stuff.innerHTML =`<p>Freeee!!!</p>`; 
+            listItem.innerHTML =`<p>Freeee!!!</p>`; 
 
         } else {
-            // stuff.innerHTML =`<p>box${i}</p>`;
-            stuff.innerHTML = [bingoValue];
+            listItem.innerHTML = bingoValue();
         }
 
-        stuff.setAttribute('onclick', `selectedBox(\`box${i}\`)`);
+        listItem.setAttribute('onclick', `selectedBox(\`box${i}\`)`);
 
-        bingoBoard.appendChild(stuff);
+        bingoBoard.appendChild(listItem);
     }
 }
 
+// TODO: display message upon achieving BINGO
+// calcuateWin = () => {
+//     const horizontalWins = [
+//         [0, 1, 2, 3, 4]
+//     ]
+// }
+
+// Create array of all possible bingo values
 const bingoValues = [
     'Diversity',
     'Intersection of business, design and code',
@@ -51,15 +62,11 @@ const bingoValues = [
     'Leading change together'
 ];
 
-const bingoValue = bingoValues[Math.floor(Math.random()*bingoValues.length)];
+const bingoValue = () => {
+    // calculate random index position
+    const calculatedIndex = Math.floor(Math.random() * bingoValues.length);
 
-bingoValues.foreach (var i = bingoValues.length-1; i <= 24; i--) {
-    bingoValues.slice(bingoValues[Math.floor(Math.random() * bingoValues.length - 1)]);
+    const randomWord = bingoValues.splice(calculatedIndex, 1)[0];
+
+    return randomWord;
 };
-
-// TODO: display message upon achieving BINGO
-// calcuateWin = () => {
-//     const horizontalWins = [
-//         [0, 1, 2, 3, 4]
-//     ]
-// }
