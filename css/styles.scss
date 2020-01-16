@@ -42,3 +42,11 @@ body {
         }
     }
 }
+
+.winner {
+    display: none;
+
+    &.display {
+        display: block;
+    }
+}
